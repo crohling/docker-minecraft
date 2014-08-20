@@ -14,6 +14,5 @@ fi
 
 
 # Run supervisor which maintains the minecraft server
-#service supervisord start
 /usr/bin/supervisord
 
