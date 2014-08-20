@@ -1,12 +1,11 @@
 #!/bin/bash
 # -----------------------------------------------------------------------------
-# docker-minecraft /restart script
+# docker-minecraft /agree_to_eula script
 #
 # Authors: Christian Rohling
 # Updated: Aug 20th, 2014
 # -----------------------------------------------------------------------------
 
 
-# Run supervisor which maintains the minecraft server
-supervisorctl stop minecraft
-supervisorctl start minecraft
+# Agree to the EULA
+echo "eula=true" > /data/eula.txt
