@@ -1,4 +1,4 @@
-# -----------------------------------------------------------------------------
+77# -----------------------------------------------------------------------------
 # docker-minecraft
 #
 # Builds a basic docker image that can run a Minecraft server
@@ -33,7 +33,15 @@ add    ./scripts/start /start
 run	   chmod +x /start
 
 
-# 80 is for nginx web, /data contains static files and database /start runs it.
+# 80 is for nginx web, /data contains static files and database.
 expose 25565
 volume ["/data"]
-cmd    ["/start"]
+
+# /start starts supervisord and the minecraft server
+run    ["/start"]
+
+# Agree to the EULA
+run    sed -i 's/false/true/g' /data/eula.txt
+
+# Restart minecraft to pick up the changes
+cmd    ["/restart"]

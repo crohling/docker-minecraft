@@ -1,0 +1,12 @@
+#!/bin/bash
+# -----------------------------------------------------------------------------
+# docker-minecraft /restart script
+#
+# Authors: Christian Rohling
+# Updated: Aug 20th, 2014
+# -----------------------------------------------------------------------------
+
+
+# Run supervisor which maintains the minecraft server
+supervisorctl stop minecraft
+supervisorctl start minecraft
